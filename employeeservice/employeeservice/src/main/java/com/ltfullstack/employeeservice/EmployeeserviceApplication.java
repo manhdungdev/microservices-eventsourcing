@@ -1,4 +1,4 @@
-package com.fullstack.bookservice;
+package com.ltfullstack.employeeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,11 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan({"com.fullstack.bookservice","com.fullstack.commonservice"})
-public class BookserviceApplication {
+@ComponentScan({"com.ltfullstack.employeeservice","com.fullstack.commonservice"})
+public class EmployeeserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookserviceApplication.class, args);
+		SpringApplication.run(EmployeeserviceApplication.class, args);
 	}
 
 }
