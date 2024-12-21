@@ -4,6 +4,7 @@ import com.fullstack.bookservice.command.command.CreateBookCommand;
 import com.fullstack.bookservice.command.command.DeleteBookCommand;
 import com.fullstack.bookservice.command.command.UpdateBookCommand;
 import com.fullstack.bookservice.command.model.BookRequestModel;
+import com.fullstack.commonservice.service.KafkaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
@@ -15,6 +16,7 @@ import java.util.UUID;
 @RequestMapping("/api/v1/books")
 public class BookCommandController {
     private final CommandGateway commandGateway;
+    private final KafkaService kafkaService;
 
     @PostMapping
     public String addBook(@Valid @RequestBody BookRequestModel model){
@@ -31,5 +33,10 @@ public class BookCommandController {
     public String deleteBook(@PathVariable String bookId){
         DeleteBookCommand command = new DeleteBookCommand(bookId);
         return commandGateway.sendAndWait(command);
+    }
+
+    @PostMapping("/sendMessage")
+    public void sendMessage(@RequestBody String message){
+        kafkaService.sendMessage("test",message);
     }
 }
