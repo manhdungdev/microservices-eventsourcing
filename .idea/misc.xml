@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/discoveryserver/discoveryserver/pom.xml" />
         <option value="$PROJECT_DIR$/employeeservice/employeeservice/pom.xml" />
         <option value="$PROJECT_DIR$/notificationservice/pom.xml" />
+        <option value="$PROJECT_DIR$/borrowingservice/borrowingservice/pom.xml" />
       </list>
     </option>
   </component>

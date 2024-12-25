@@ -2,13 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apigateway" />
-        <module name="employeeservice" />
         <module name="commonservice" />
+        <module name="borrowingservice" />
+        <module name="employeeservice" />
         <module name="discoveryserver" />
         <module name="bookservice" />
         <module name="notificationservice" />
@@ -19,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apigateway" options="-parameters" />
       <module name="bookservice" options="-parameters" />
+      <module name="borrowingservice" options="-parameters" />
       <module name="commonservice" options="-parameters" />
       <module name="discoveryserver" options="-parameters" />
       <module name="employeeservice" options="-parameters" />

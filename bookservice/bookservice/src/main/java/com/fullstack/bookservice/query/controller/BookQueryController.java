@@ -3,11 +3,11 @@ package com.fullstack.bookservice.query.controller;
 
 import com.fullstack.bookservice.query.model.BookResponseModel;
 import com.fullstack.bookservice.query.queries.GetAllBookQuery;
-import com.fullstack.bookservice.query.queries.GetBookDetailQuery;
+import com.fullstack.commonservice.model.BookResponseCommonModel;
+import com.fullstack.commonservice.queries.GetBookDetailQuery;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +25,8 @@ public class BookQueryController {
     }
 
     @GetMapping("{bookId}")
-    public BookResponseModel getBookDetail(@PathVariable String bookId){
+    public BookResponseCommonModel getBookDetail(@PathVariable String bookId){
         GetBookDetailQuery query = new GetBookDetailQuery(bookId);
-        return queryGateway.query(query,ResponseTypes.instanceOf(BookResponseModel.class)).join();
+        return queryGateway.query(query,ResponseTypes.instanceOf(BookResponseCommonModel.class)).join();
     }
 }
