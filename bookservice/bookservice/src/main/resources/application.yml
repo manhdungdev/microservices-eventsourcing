@@ -19,7 +19,8 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://discoveryserver:8761/eureka
 axon:
   axonserver:
     client-id: bookingservice
+    servers: axonserver:8124
